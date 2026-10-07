@@ -1,4 +1,4 @@
-# Samsara Development
+# Sansara Development
 
 A responsive architectural landing-page prototype using basic HTML, Tailwind CSS via CDN, custom CSS, and vanilla JavaScript. No build step or framework.
 
@@ -15,7 +15,7 @@ Open `index.html` directly, or run `node server.cjs` and visit http://localhost:
 
 ## Content decisions and launch requirements
 
-- The user's direct request uses **Samsara**, whereas the PRD uses **Sansara**. This prototype follows the direct request.
+- The approved brand spelling is **Sansara** throughout the website.
 - The PRD's Next.js Image suggestion does not apply to the explicitly requested vanilla stack.
 - The typographic wordmark is a provisional identity, not an official supplied logo.
 - Images are fictional concepts and identified as such. Published residence specifications and company commitments are sourced from the old site; see CONTENT-SOURCES.md. Current prices, inventory and dated construction status are still requested from the team.

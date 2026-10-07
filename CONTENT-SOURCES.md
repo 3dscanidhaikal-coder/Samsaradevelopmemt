@@ -7,7 +7,7 @@ The page initially exposes a generic residence template. The actual specificatio
 
 ## Identity and contacts
 
-The old website spells the company **Sansara Development**. The redesign keeps **Samsara** as requested directly earlier in this task. Public contact handles and WhatsApp drafts use the source company's spelling.
+The old website spells the company **Sansara Development**. The redesign keeps **Sansara** as requested directly earlier in this task. Public contact handles and WhatsApp drafts use the source company's spelling.
 
 - WhatsApp: +62 822 3537 2572 → https://wa.me/6282235372572
 - Instagram: @sansara_development → https://www.instagram.com/sansara_development/

@@ -113,7 +113,7 @@ Apartments and villas for contemporary island living.|Апартаменты и 
 PEOPLE BEHIND THE PLACES|ЛЮДИ, СОЗДАЮЩИЕ ПРОСТРАНСТВА
 A shared vision.|Общее видение.
 A personal commitment.|Личная ответственность.
-Meet the people behind Samsara Development.|Знакомьтесь с командой Samsara Development.
+Meet the people behind Sansara Development.|Знакомьтесь с командой Sansara Development.
 Team profiles will be introduced here soon.|Скоро здесь появятся профили участников команды.
 Portrait coming soon|Фото скоро появится
 Team member name|Имя участника команды
@@ -150,7 +150,7 @@ Architecture for|Архитектура для
 well lived.|в гармонии.
 Explore our projects|Посмотреть проекты
 BALI, INDONESIA|БАЛИ, ИНДОНЕЗИЯ
-01 / THE SAMSARA WAY|01 / ФИЛОСОФИЯ SAMSARA
+01 / THE SANSARA WAY|01 / ФИЛОСОФИЯ SANSARA
 ARCHITECTURE. LIFE. LONGEVITY.|АРХИТЕКТУРА. ЖИЗНЬ. ДОЛГОВЕЧНОСТЬ.
 Not just a place.|Больше, чем место.
 A way of living.|Образ жизни.
@@ -285,7 +285,7 @@ Continue in WhatsApp ↗|Продолжить в WhatsApp ↗
 Download your enquiry ↓|Скачать запрос ↓
 Construction stage|Этап строительства
 Illustrative construction rendering.|Иллюстрация этапа строительства.
-ABOUT SAMSARA DEVELOPMENT|О SAMSARA DEVELOPMENT
+ABOUT SANSARA DEVELOPMENT|О SANSARA DEVELOPMENT
 A lasting intention.|С заботой о будущем.
 Contemporary homes in Bali, shaped by thoughtful design, everyday comfort and a longer perspective.|Современные дома на Бали: продуманный дизайн, повседневный комфорт и взгляд в будущее.
 Our commitment|Наши обязательства
@@ -366,7 +366,7 @@ Object.assign(russianText, {
 });
 
 let selectedLanguage = 'en';
-try { selectedLanguage = localStorage.getItem('samsara-language') === 'ru' ? 'ru' : 'en'; } catch {}
+try { selectedLanguage = localStorage.getItem('sansara-language') === 'ru' ? 'ru' : 'en'; } catch {}
 const originalText = new WeakMap();
 const originalAttributes = new WeakMap();
 const translate = value => {
@@ -407,7 +407,7 @@ function applyLanguage() {
   document.documentElement.lang=selectedLanguage;
   document.querySelectorAll('.language-current').forEach(label=>{if(label.textContent!==selectedLanguage.toUpperCase()) label.textContent=selectedLanguage.toUpperCase();});
   document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.language===selectedLanguage)));
-  document.title=document.body.dataset.phase ? (selectedLanguage==='ru'?'Solvyn City — Фаза ':'Solvyn City Phase ')+document.body.dataset.phase+' — Samsara Development' : document.body.classList.contains('residences-page') ? (selectedLanguage==='ru'?'Резиденции — Samsara Development':'Residences — Samsara Development') : document.body.classList.contains('projects-page') ? (selectedLanguage==='ru'?'Проекты — Samsara Development':'Projects — Samsara Development') : (selectedLanguage==='ru' ? (document.body.classList.contains('about-page')?'О нас — Samsara Development':'Samsara Development — Жизнь в гармонии.') : (document.body.classList.contains('about-page')?'About Us — Samsara Development':'Samsara Development — A life well lived.'));
+  document.title=document.body.dataset.phase ? (selectedLanguage==='ru'?'Solvyn City — Фаза ':'Solvyn City Phase ')+document.body.dataset.phase+' — Sansara Development' : document.body.classList.contains('residences-page') ? (selectedLanguage==='ru'?'Резиденции — Sansara Development':'Residences — Sansara Development') : document.body.classList.contains('projects-page') ? (selectedLanguage==='ru'?'Проекты — Sansara Development':'Projects — Sansara Development') : (selectedLanguage==='ru' ? (document.body.classList.contains('about-page')?'О нас — Sansara Development':'Sansara Development — Жизнь в гармонии.') : (document.body.classList.contains('about-page')?'About Us — Sansara Development':'Sansara Development — A life well lived.'));
   languageObserver.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','placeholder']});
 }
 document.querySelectorAll('.language-control').forEach(control => {
@@ -425,7 +425,7 @@ document.querySelectorAll('.language-control').forEach(control => {
   });
   choices.forEach(button=>button.addEventListener('click',()=>{
     selectedLanguage=button.dataset.language;
-    try {localStorage.setItem('samsara-language',selectedLanguage);} catch {}
+    try {localStorage.setItem('sansara-language',selectedLanguage);} catch {}
     setOpen(false);toggle.focus({preventScroll:true});applyLanguage();
   }));
   control.addEventListener('keydown',event=>{

@@ -1,4 +1,4 @@
-# Samsara — provisional design system
+# Sansara — provisional design system
 
 Source: supplied PRD and direct user request. No official logo or brand kit was supplied. The wordmark is provisional typography.
 

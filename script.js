@@ -214,7 +214,7 @@ form.addEventListener('submit', e => {
   if (!form.reportValidity()) return;
   const values = new FormData(form);
   const draft = `Hello Sansara Development,\nMy name is ${values.get('name')}.\nEmail: ${values.get('email')}\nI am interested in: ${values.get('interest')}.\n\n${values.get('message') || 'Please send me the current details and next steps.'}`;
-  const text = `SAMSARA DEVELOPMENT — CONSULTATION ENQUIRY\n\nName: ${values.get('name')}\nEmail: ${values.get('email')}\nInterest: ${values.get('interest')}\n\n${values.get('message') || 'No additional message.'}\n\nPrepared locally. This enquiry has not been sent.`;
+  const text = `SANSARA DEVELOPMENT — CONSULTATION ENQUIRY\n\nName: ${values.get('name')}\nEmail: ${values.get('email')}\nInterest: ${values.get('interest')}\n\n${values.get('message') || 'No additional message.'}\n\nPrepared locally. This enquiry has not been sent.`;
   if (enquiryUrl) URL.revokeObjectURL(enquiryUrl);
   enquiryUrl = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
   download.href = enquiryUrl;

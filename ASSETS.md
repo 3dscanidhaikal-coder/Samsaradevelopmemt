@@ -1,6 +1,6 @@
 # Generated imagery
 
-Created with the built-in image_gen tool. These are fictional architectural concepts, not photographs of actual Samsara projects. Optimized WebP files are used on the page; original PNGs are retained in assets/originals.
+Created with the built-in image_gen tool. These are fictional architectural concepts, not photographs of actual Sansara projects. Optimized WebP files are used on the page; original PNGs are retained in assets/originals.
 
 ## hero.webp
 

@@ -98,7 +98,7 @@ dialog input,dialog select,dialog textarea{font-size:16px}
 @media(max-width:1023px){.desktop-nav,.header-actions .consult-link{display:none}.menu-toggle{display:flex;gap:15px;align-items:center}.menu-toggle span{font-size:18px}}
 @media(max-width:767px){.hero-content{padding-top:190px}.hero-bottom p{font-size:16px}.hero-foot{font-size:11px}.residence-meta{display:block}.residence-meta>span{display:block;margin-top:8px}.footer-top{grid-template-columns:1fr 1fr}.footer-bottom{font-size:12px}.testimonial-content .quote-bottom{flex-wrap:wrap;gap:20px}.testimonial-portrait{width:132px}.commitment-index{letter-spacing:.07em}.stage-caption p{max-width:none}.image-tag{max-width:calc(100% - 100px)}}
 
-/* Samsara brand palette: deep blue, warm neutrals, and restrained gold details. */
+/* Sansara brand palette: deep blue, warm neutrals, and restrained gold details. */
 :root{--brand-blue:#19403f;--blue-deep:#102c2b;--gold:#CBB896;--gold-light:#E3D6BF;--gold-deep:#B69E72;--black:#2b2b2b;--white:#FBFBFB;--beige:#F6F4EF}
 h1,h2,h3{color:var(--brand-blue)}
 :is(.hero,.about-page-hero) h1,.contact-content h2,.assurance-bottom h3{color:var(--white)}
