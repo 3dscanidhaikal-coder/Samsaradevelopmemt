@@ -485,7 +485,7 @@ if (baliMapElement) {
   });
   if (window.L) {
     baliMapElement.replaceChildren();
-    map = L.map(baliMapElement,{scrollWheelZoom:false});
+    map = L.map(baliMapElement,{scrollWheelZoom:true});
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     const icon = (text,project=false) => L.divIcon({className:'map-pin'+(project?' map-pin-project':''),html:text,iconSize:[32,32],iconAnchor:[16,16]});
     L.marker(origin,{icon:icon('S',true),title:'Solvyn City'}).addTo(map).bindPopup('<strong>Solvyn City</strong><br>Jl. Karang Pandawa, Kutuh');

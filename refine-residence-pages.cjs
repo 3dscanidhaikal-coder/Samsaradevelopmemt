@@ -1,6 +1,7 @@
 const fs=require('fs');
 const cta=fs.readFileSync('projects.html','utf8').match(/<section class="contact-section" id="contact">[\s\S]*?<\/section>/)[0];
 const paths={
+ 'location':'<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
  'Floor area':'<rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h4M4 14h3M9 4v4M14 4v3"/>',
  'Bedrooms':'<path d="M3 18v-8m18 8v-8M3 15h18M3 10h18v5M6 10V6h12v4M8 6v4m8-4v4"/>',
  'Bathrooms':'<path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-3Zm2 0V5a2 2 0 0 1 4 0M6 20v2m12-2v2"/>',
