@@ -3,12 +3,12 @@
   if (!gallery) return;
   const slides = [...gallery.querySelectorAll('.flagship-slides img')];
   const content = [
+    ['Solvyn River Surf', 'Find your flow.', 'Feel the energy.', 'A signature surf experience at the heart of the project, bringing movement and a new rhythm to island life.'],
     ['Solvyn City', 'A new expression of', 'contemporary island living.', 'Villas and apartments in Bukit. Surf, wellness and spaces to come together.'],
     ['Solvyn Restaurant', 'Good food.', 'Time well spent.', 'A place to gather around the table, share flavours and enjoy unhurried moments together.'],
     ['Solvyn Cafe', 'Your daily pause.', 'An easy island rhythm.', 'From a morning coffee to an afternoon conversation, a welcoming space for the little rituals of everyday life.'],
     ['Solvyn Hall', 'Come together.', 'Make it memorable.', 'A dedicated setting for celebrations, gatherings and the occasions that bring people closer.'],
-    ['Solvyn Spa', 'Slow down.', 'Return to yourself.', 'A quieter side of Solvyn City, with space to step away from the everyday and make time for wellbeing.'],
-    ['Solvyn River Surf', 'Find your flow.', 'Feel the energy.', 'A signature surf experience at the heart of the project, bringing movement and a new rhythm to island life.']
+    ['Solvyn Spa', 'Slow down.', 'Return to yourself.', 'A quieter side of Solvyn City, with space to step away from the everyday and make time for wellbeing.']
   ];
   let copyAnimations = [];
   const motion = matchMedia('(prefers-reduced-motion: reduce)');

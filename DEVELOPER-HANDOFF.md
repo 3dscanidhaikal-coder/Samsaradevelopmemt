@@ -9,7 +9,7 @@ For static hosting, deploy all HTML, CSS, JavaScript and assets together while p
 External services: Google Fonts, Tailwind CDN, Leaflet CDN and OpenStreetMap tiles.
 
 ## Structure
-- index.html: homepage, project highlights, Bali map, amenities, FAQ and consultation CTA.
+- index.html: homepage, project highlights, Bali map, FAQ and consultation CTA.
 - about.html: company, world map/statistics, experience and consultation CTA.
 - projects.html: Phase 1/Phase 2 carousel and project cards.
 - residences.html: residence category filters and shared residence links.
@@ -26,7 +26,7 @@ Detail pages use <base href="../">; their asset URLs resolve from the website ro
 Some legacy filenames and internal data keys remain for compatibility. Public project names are Solvyn City Phase 1 and Phase 2.
 
 ## Current content
-Phase 1: 2027, leasehold 23+ years with a guaranteed extension.
+Phase 1: 2027, leasehold 23+ years with a guaranteed 25-year leasehold extension at a fixed price.
 Phase 2: 2028, leasehold 80 years.
 Gallery maximum: five available images per residence.
 Matching phase/directory cards share one detail page. Earlier duplicate URLs redirect.
@@ -38,3 +38,4 @@ The four largest project images are web-sized copies in this package/GitHub; ori
 
 ## Before launch
 Confirm final dates, availability, pricing, legal/privacy copy and translations with the owner. Approved figures and property specifications in this snapshot came from the owner's supplied references. Some image sets remain shared illustrations.
+Latest updates: homepage River Surf opens the gallery; white side arrows; blue FAQ followed by the Bali map; technical features integrated into The Sansara Way with staggered reveals. The former amenities section is preserved in archive/features-amenities/. About statistics appear under the world map and count up on entry.

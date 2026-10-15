@@ -18,13 +18,13 @@ Villas and apartments in Bukit, Bali.|Виллы и апартаменты на 
 Villas, studio apartments, and penthouses in Bukit, Bali.|Виллы, апартаменты-студии и пентхаусы на Буките, Бали.
 
 Leasehold terms|Условия аренды
-23+ years, with a guaranteed extension.|23+ года с гарантированным продлением.
+23+ years, with a guaranteed 25-year leasehold extension at a fixed price.|23+ года с гарантированным продлением аренды на 25 лет по фиксированной цене.
 80 years.|80 лет.
-Leasehold terms depend on the project phase. Phase 1 offers 23+ years, with a guaranteed extension. Phase 2 offers 80 years. This grants owners a long-term right to use the property and supports long-term ownership planning.|Условия leasehold зависят от этапа проекта. Phase 1: 23+ года с гарантированным продлением. Phase 2: 80 лет. Это предоставляет владельцам долгосрочное право пользования недвижимостью и возможность долгосрочного планирования.
+Leasehold terms depend on the project phase. Phase 1 offers 23+ years, with a guaranteed 25-year leasehold extension at a fixed price. Phase 2 offers 80 years. This grants owners a long-term right to use the property and supports long-term ownership planning.|Условия leasehold зависят от этапа проекта. Phase 1: 23+ года с гарантированным продлением аренды на 25 лет по фиксированной цене. Phase 2: 80 лет. Это предоставляет владельцам долгосрочное право пользования недвижимостью и возможность долгосрочного планирования.
 Innovative water purification system|Инновационная система очистки воды
 Innovative water purification system: show details|Инновационная система очистки воды: подробнее
 An innovative water purification system designed to support water quality throughout the development. Ask our team for the system specifications and maintenance details.|Инновационная система очистки воды для поддержания качества воды на территории комплекса. Уточните у нашей команды характеристики системы и условия обслуживания.
- 
+
 Melasti Beach|Пляж Меласти
 Two-bedroom penthouse|Пентхаус с двумя спальнями
 2 balconies · 3 penthouses|2 балкона · 3 пентхауса
@@ -432,6 +432,37 @@ Object.assign(russianText, {
   'Contact us on WhatsApp': 'Связаться в WhatsApp', 'Contact us on Telegram': 'Связаться в Telegram'
 });
 
+// Complete translations for the current FAQ, including every answer and list item.
+Object.assign(russianText, {
+  "Who is responsible for managing the property?": "Кто отвечает за управление недвижимостью?",
+  "Property management is handled by a professional management company—our long-term partner with experience in the hospitality and property management sectors.": "Управлением недвижимостью занимается профессиональная управляющая компания — наш многолетний партнёр с опытом работы в сфере гостеприимства и управления недвижимостью.",
+  "The company takes full responsibility for the operational management of the property: its maintenance and upkeep, guest services, tenant recruitment, and property marketing. The management company also collaborates with tour operators and other partners to ensure a steady flow of guests and optimal occupancy rates for the residences.": "Компания полностью берёт на себя операционное управление недвижимостью: техническое обслуживание и содержание, обслуживание гостей, поиск арендаторов и продвижение объекта. Управляющая компания также сотрудничает с туроператорами и другими партнёрами, чтобы обеспечивать стабильный поток гостей и оптимальную загрузку резиденций.",
+  "As a result, the owner does not need to personally search for tenants, arrange guest accommodations, or handle the day-to-day management of the property—a professional team takes care of all these matters.": "Таким образом, владельцу не нужно самостоятельно искать арендаторов, организовывать размещение гостей или заниматься повседневным управлением недвижимостью — все эти задачи выполняет профессиональная команда.",
+  "What form of ownership is provided for?": "Какая предусмотрена форма владения?",
+  "Leasehold terms depend on the project phase. Phase 1 offers 23+ years, with a guaranteed 25-year leasehold extension at a fixed price. Phase 2 offers 80 years. This grants owners a long-term right to use the property and supports long-term ownership planning.": "Сроки долгосрочной аренды зависят от этапа проекта. Первый этап предусматривает срок более 23 лет с гарантированным продлением аренды на 25 лет по фиксированной цене. Второй этап — 80 лет. Это предоставляет владельцам долгосрочное право пользования недвижимостью и возможность долгосрочного планирования.",
+  "What infrastructure and facilities are included in the project?": "Какая инфраструктура и какие объекты предусмотрены в проекте?",
+  "The following are planned for the site:": "На территории запланированы:",
+  "4 restaurants with an atmosphere conducive to relaxation and socializing": "4 ресторана с атмосферой для отдыха и общения",
+  "Bali’s only artificial surf wave for surfing": "Единственная на Бали искусственная волна для сёрфинга",
+  "An open-air movie theater under the stars": "Кинотеатр под открытым небом",
+  "A state-of-the-art fitness center": "Современный фитнес-центр",
+  "A wellness area for relaxation and rejuvenation": "Оздоровительная зона для отдыха и восстановления",
+  "An elegant wedding hall for special events": "Элегантный свадебный зал для торжественных мероприятий",
+  "An architectural bridge that will become one of the project’s most recognizable visual features": "Архитектурный мост, который станет одним из самых узнаваемых элементов проекта",
+  "All of this creates a space where everyday life blends with relaxation, activity, and premium service.": "Всё это создаёт пространство, где повседневная жизнь сочетается с отдыхом, активностью и первоклассным сервисом.",
+  "The project is located just 2 minutes from the ocean, providing quick access to the coast and the natural beauty of southern Bali.": "Проект расположен всего в 2 минутах от океана, обеспечивая быстрый доступ к побережью и природным красотам южного Бали.",
+  "Can owners live in their residences themselves, or are they intended exclusively for rental?": "Могут ли владельцы сами проживать в своих резиденциях или они предназначены исключительно для сдачи в аренду?",
+  "Yes, owners can live in their residences themselves whenever it is convenient for them. During periods when the owner is not using the property, our management company can handle the rental and guest accommodations to ensure the residence remains in demand and generates income.": "Да, владельцы могут сами проживать в своих резиденциях в удобное для них время. Когда владелец не пользуется недвижимостью, наша управляющая компания может заниматься её сдачей в аренду и размещением гостей, чтобы резиденция оставалась востребованной и приносила доход."
+});
+
+Object.assign(russianText, {'04 / THE MAKING OF A PLACE':'04 / СОЗДАНИЕ ПРОЕКТА','05 / A LITTLE MORE CLARITY':'05 / ОТВЕТЫ НА ВОПРОСЫ'});
+
+Object.assign(russianText, {
+  "An innovative purification system designed to support water quality throughout the development.": "Инновационная система очистки для поддержания качества воды на территории комплекса.",
+  "Galvanised coatings and protective detailing help protect the steel frame.": "Оцинкованное покрытие и продуманные защитные решения помогают защитить стальной каркас.",
+  "Qualified engineers assess each site’s structural design, considering foundations, framing and connections together.": "Квалифицированные инженеры оценивают конструктивные решения для каждого участка, рассматривая фундамент, каркас и соединения в комплексе."
+});
+
 let selectedLanguage = 'en';
 try { selectedLanguage = localStorage.getItem('sansara-language') === 'ru' ? 'ru' : 'en'; } catch {}
 const originalText = new WeakMap();
@@ -445,14 +476,16 @@ const translate = value => {
 };
 // Preserve option values used by enquiry logic before translating visible labels.
 document.querySelectorAll('option:not([value])').forEach(option=>option.value=option.textContent);
-const languageObserver = new MutationObserver(()=>applyLanguage());
+const languageObserver = new MutationObserver(records=>{
+ if(records.some(record=>!(record.target.nodeType===Node.ELEMENT_NODE?record.target:record.target.parentElement)?.closest('[data-count-to]'))) applyLanguage();
+});
 function applyLanguage() {
   languageObserver.disconnect();
   document.querySelectorAll('option:not([value])').forEach(option=>option.value=option.textContent);
   const walker = document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node=walker.currentNode;
-    if (node.parentElement.closest('script,style,.language-control,.leaflet-control-attribution')) continue;
+    if (node.parentElement.closest('script,style,.language-control,.leaflet-control-attribution,[data-count-to]')) continue;
     const current=node.textContent;
     const saved=originalText.get(node);
     const original=saved && (current===saved || current.trim()===translate(saved.trim())) ? saved : current;
