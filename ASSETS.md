@@ -21,3 +21,6 @@ Photo by The Connected Narrative on Unsplash: https://unsplash.com/photos/a-man-
 Source: https://images.unsplash.com/photo-1651684215020-f7a5b6610f23
 License: https://unsplash.com/license
 This is a real stock portrait used solely as a labeled design placeholder; the person is not represented as an actual customer or endorser. Downloaded at 600px width in WebP format.
+
+## Water purification card
+Generated with the built-in image generation tool. Website asset: assets/water-purification.jpg (640 px wide). Prompt: Simple photorealistic 4:3 card image of three white filter housings, a stainless-steel manifold and neat pipes on a warm grey utility wall; soft natural light, subtle deep-green accents; no people, text, logos or clutter. Illustrative concept, not a specification drawing.
