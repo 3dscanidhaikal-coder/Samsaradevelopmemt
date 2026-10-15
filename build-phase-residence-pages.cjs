@@ -40,3 +40,5 @@ require('./consolidate-residence-pages.cjs');
 require('./sync-phase-cards.cjs');
 
 require('./normalize-project-names.cjs');
+
+require('./add-villa-floor-plans.cjs');

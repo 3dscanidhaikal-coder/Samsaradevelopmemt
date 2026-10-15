@@ -776,3 +776,13 @@ body:has(.site-header.scrolled) .floating-back{top:102px}
 .flagship-controls button[data-flagship-step]:hover,.highlight-navigation button[data-slide-step]:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--brand-blue)}
 .flagship-controls button[data-flagship-step]:focus-visible,.highlight-navigation button[data-slide-step]:focus-visible{outline:2px solid var(--white);outline-offset:4px}
 .flagship-controls button[data-flagship-step],.highlight-navigation button[data-slide-step]{font-weight:700;-webkit-text-stroke:.35px currentColor}
+
+/* Reserved space for approved villa floor plans. */
+.villa-floor-plan{margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
+.villa-floor-plan-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:22px}
+.villa-floor-plan-heading h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:400;line-height:1.15}
+.villa-floor-plan-heading p{font-size:13px;color:var(--muted)}
+.villa-floor-plan-placeholder{min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:36px 24px;border:1px dashed #b69e7273;background:#ffffff45;color:var(--ink)}
+.villa-floor-plan-placeholder svg{color:var(--dark-gold,#B69E72);margin-bottom:6px}
+.villa-floor-plan-placeholder>span{font-size:15px;font-weight:500}.villa-floor-plan-placeholder p{font-size:13px;color:var(--muted)}
+@media(max-width:767px){.villa-floor-plan{margin-top:28px;padding-top:24px}.villa-floor-plan-heading{align-items:flex-start;flex-direction:column;gap:8px}.villa-floor-plan-heading h3{font-size:30px}.villa-floor-plan-placeholder{min-height:230px;padding:28px 18px}}

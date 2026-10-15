@@ -1,6 +1,11 @@
 'use strict';
 // English source text is retained so switching language never replaces controls.
 const russianText = Object.fromEntries(`
+Floor plan|Планировка
+A closer look at the layout.|Подробнее о планировке.
+Floor plan coming soon|Планировка скоро появится
+The detailed layout will be added here.|Здесь будет размещена подробная планировка.
+
 A valid passport is the only document required to begin the property purchase process.|Для начала процесса покупки недвижимости необходим только действующий паспорт.
 We guide clients through every stage of the transaction and assist with preparing and completing all necessary documentation.|Мы сопровождаем клиентов на каждом этапе сделки и помогаем подготовить и оформить всю необходимую документацию.
 

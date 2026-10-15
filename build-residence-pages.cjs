@@ -28,3 +28,5 @@ require('./update-residence-recommendations.cjs');
 require('./apply-sansara-pictures.cjs');
 
 require('./normalize-project-names.cjs');
+
+require('./add-villa-floor-plans.cjs');
