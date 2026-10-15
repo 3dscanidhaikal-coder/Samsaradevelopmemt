@@ -1,0 +1,22 @@
+const fs=require('fs');
+const name='Studio apartments';
+const description='Studio apartments at Solvyn City Phase 2 offer 34.6 m², with a spacious bedroom and seating area, one bathroom and a balcony. This residence type comprises 78 apartments.';
+let html=fs.readFileSync('assets/residence-solvyn-0.html','utf8');
+html=html.replace(/<title>.*?<\/title>/,`<title>${name} · Solvyn City Phase 2</title>`).replace(/<h1>.*?<\/h1>/,`<h1>${name}.</h1>`).replace(/<p class="villa-intro">[\s\S]*?<\/p>/,`<p class="villa-intro">${description}</p>`);
+html=html.replace(/(<dt>Bedrooms<\/dt><dd>).*?(<\/dd>)/,'$1Studio$2').replace(/(<dt>Bathrooms<\/dt><dd>).*?(<\/dd>)/,'$11$2');
+html=html.replace(/(<div class="wrap residences-banner-copy">[\s\S]*?<h1>.*?<\/h1><p>).*?(<\/p>)/,'$1'+'34.6 m² · Studio · Balcony'+'$2');
+html=html.replaceAll('1-bedroom apartment',name);
+fs.writeFileSync('assets/residence-solvyn-0.html',html);
+const photo='assets/Sansara Pictures/Residences Pages/Phase 2/Apartment+Penthouse/Aprt-.jpg';
+const card=`<article class="residence-list-card reveal"><a class="residence-list-image" href="assets/residence-solvyn-0.html" aria-label="Explore studio apartments"><img src="${photo}" alt="Studio apartment building rendering" loading="lazy"><span class="image-circle" aria-hidden="true">↗</span></a><div class="residence-list-copy"><span class="eyebrow">Solvyn City Phase 2</span><h3>${name}</h3><p>34.6 m² · Studio</p><p class="muted">Balcony · 78 apartments</p><a class="text-link" href="assets/residence-solvyn-0.html">Explore more <span aria-hidden="true">↗</span></a></div></article>`;
+let phase=fs.readFileSync('solvyn-phase-2.html','utf8');
+phase=phase.replace(/<article class="residence-list-card reveal">[\s\S]*?<\/article>/,card);
+fs.writeFileSync('solvyn-phase-2.html',phase);
+const files=fs.readdirSync('.').filter(f=>f.endsWith('.html')).concat(fs.readdirSync('assets').filter(f=>/^residence-.*\.html$/.test(f)).map(f=>'assets/'+f));
+for(const file of files){let text=fs.readFileSync(file,'utf8');text=text.replace(/<article class="residence-list-card[^"]*">[\s\S]*?<\/article>/g,block=>block.includes('href="assets/residence-solvyn-0.html"')?block.replace(/<h3>.*?<\/h3>/,`<h3>${name}</h3>`).replace(/(<h3>.*?<\/h3>)<p>.*?<\/p>(?:<p class="muted">.*?<\/p>)?/,'$1<p>34.6 m² · Studio</p><p class="muted">Balcony · 78 apartments</p>'):block);fs.writeFileSync(file,text);}
+let js=fs.readFileSync('script.js','utf8').replace("name: '1-bedroom apartment', area: 34.6","name: 'Studio apartments', area: 34.6, quantity:78, studio:true");fs.writeFileSync('script.js',js);
+let alias=fs.readFileSync('consolidate-residence-pages.cjs','utf8').replace("'phase-2-1':'pandawa-0'","'phase-2-1':'solvyn-0'");fs.writeFileSync('consolidate-residence-pages.cjs',alias);
+fs.writeFileSync('assets/residence-phase-2-1.html','<!doctype html><html><head><meta http-equiv="refresh" content="0;url=residence-solvyn-0.html"><title>Studio apartments</title></head><body><a href="residence-solvyn-0.html">View studio apartments</a></body></html>');
+const translations=[[name,'СТУДИЯ апартаменты'],['Studio','Студия'],['34.6 m² · Studio','34,6 м² · Студия'],['34.6 m² · Studio · Balcony','34,6 м² · Студия · Балкон'],['Balcony · 78 apartments','Балкон · 78 апартаментов'],[description,'Апартаменты-студии площадью 34,6 м² в Solvyn City Phase 2: просторная спальня с зоной отдыха, ванная комната и балкон. Количество апартаментов этого типа — 78.']];
+let lang=fs.readFileSync('assets/language.js','utf8');lang=lang.replace('const russianText = Object.fromEntries(`','const russianText = Object.fromEntries(`\n'+translations.filter(([en])=>!lang.includes(en+'|')).map(t=>t.join('|')).join('\n'));fs.writeFileSync('assets/language.js',lang);
+console.log('Phase 2 studio apartments updated; Phase 1 apartment pages preserved.');

@@ -1,0 +1,12 @@
+const fs=require('fs');
+const file='assets/residence-phase-2-3.html';
+const description='A 109 m² two-bedroom villa at Solvyn City Phase 2, arranged over two floors. The layout includes a kitchen-living room, two bathrooms plus a guest WC, and a terrace with a relaxation area. A 12.4 m² private pool sits on the upper level, with an ocean view. This residence type comprises 31 villas.';
+let html=fs.readFileSync(file,'utf8');
+for(const[k,v]of Object.entries({Bedrooms:'2',Bathrooms:'2 + guest WC',Floors:'2',Pool:'12.4 m² · upper level'}))html=html.replace(new RegExp(`(<dt>${k}</dt><dd>).*?(</dd>)`),'$1'+v+'$2');
+html=html.replace(/<p class="villa-intro">[\s\S]*?<\/p>/,`<p class="villa-intro">${description}</p>`).replace(/(<div class="wrap residences-banner-copy">[\s\S]*?<h1>.*?<\/h1><p>).*?(<\/p>)/,'$1'+'109 m² · 2 bedrooms · 12.4 m² private pool'+'$2');
+fs.writeFileSync(file,html);
+const files=fs.readdirSync('.').filter(f=>f.endsWith('.html')).concat(fs.readdirSync('assets').filter(f=>/^residence-.*\.html$/.test(f)).map(f=>'assets/'+f));
+for(const f of files){let text=fs.readFileSync(f,'utf8');text=text.replace(/<article class="residence-list-card[^"]*">[\s\S]*?<\/article>/g,card=>card.includes('href="assets/residence-phase-2-3.html"')?card.replace(/(<h3>.*?<\/h3>)<p>.*?<\/p>(?:<p class="muted">.*?<\/p>)?/,'$1<p>109 m² · 2 bedrooms</p><p class="muted">12.4 m² private pool · 31 villas</p>'):card);fs.writeFileSync(f,text);}
+const translations=[['12.4 m² · upper level','12,4 м² · верхний уровень'],['12.4 m² private pool · 31 villas','Частный бассейн 12,4 м² · 31 вилла'],[description,'Вилла площадью 109 м² с 2 спальнями в Solvyn City Phase 2, расположенная на 2 этажах. Кухня-гостиная, 2 ванные комнаты и гостевой санузел, терраса с зоной отдыха, бассейн на верхнем уровне площадью 12,4 м² и вид на океан. Количество вилл этого типа — 31.']];
+let lang=fs.readFileSync('assets/language.js','utf8');lang=lang.replace('const russianText = Object.fromEntries(`','const russianText = Object.fromEntries(`\n'+translations.filter(([en])=>!lang.includes(en+'|')).map(t=>t.join('|')).join('\n'));fs.writeFileSync('assets/language.js',lang);
+console.log('2-bedroom villa type 2 specifications and linked cards updated.');

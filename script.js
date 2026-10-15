@@ -98,16 +98,16 @@ const consultDialog = document.querySelector('#consult-dialog');
 const residences = {
   pandawa: [
     { name: 'Apartments', area: 40, bedrooms: 1, floors: null, bathrooms: 1, pool: 'Communal pool', extras: 'Kitchen-living room · Balcony · Parking · Ocean view' },
-    { name: 'Villa type 1', area: 101, bedrooms: 2, floors: 2, bathrooms: 3, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' },
-    { name: 'Villa type 2', area: 129, bedrooms: 3, floors: 2, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' },
-    { name: 'Villa type 3', area: 234, bedrooms: 3, floors: 3, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }
+    { name: 'Villa type 1', area: 101, quantity:36, bedrooms: 2, floors: 2, bathrooms: 3, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' },
+    { name: 'Villa type 2', area: 129, quantity:20, bedrooms: 3, floors: 2, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' },
+    { name: 'Villa type 3', area: 234, quantity:8, includesRooftop:true, bedrooms: 3, floors: 3, bathrooms: 4, pool: '18 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }
   ],
   solvyn: [
-    { name: '1-bedroom apartment', area: 34.6, bedrooms: 1, floors: null, bathrooms: 1, pool: 'Communal pool', extras: 'Bedroom with seating area · Balcony · Shared recreation area' },
-    { name: '1-bedroom villa', area: 46.3, bedrooms: 1, floors: 1, bathrooms: 1, pool: '7.5 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' },
-    { name: '2-bedroom villa', area: 102, bedrooms: 2, floors: 2, bathrooms: 2, pool: '11.7 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' },
-    { name: '3-bedroom villa · Type 1', area: 165, bedrooms: 3, floors: 3, bathrooms: 3, pool: '11.7 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' },
-    { name: '3-bedroom villa · Type 2', area: 121, bedrooms: 3, floors: 2, bathrooms: 3, pool: '14.4 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' }
+    { name: 'Studio apartments', area: 34.6, quantity:78, studio:true, bedrooms: 1, floors: null, bathrooms: 1, pool: 'Communal pool', extras: 'Bedroom with seating area · Balcony · Shared recreation area' },
+    { name: 'One-bedroom villa', area: 47.7, quantity:14, bedrooms: 1, floors: 1, bathrooms: 1, pool: '7.5 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' },
+    { name: '2-bedroom villa · Type 1', area: 104, quantity:11, bedrooms: 2, floors: 2, bathrooms: 2, guestWC:true, pool: '11.7 m² private pool', extras: 'Kitchen-living room · Guest WC · Terrace with relaxation area · Lower-level pool · Ocean view' },
+    { name: '3-bedroom villa · Type 1', area: 167, quantity:7, bedrooms: 3, floors: 3, bathrooms: 3, guestWC:true, pool: '12 m² lower-level pool + 12.2 m² upper-level pool', extras: 'Kitchen-living room · Guest WC · Terrace with relaxation area · Balcony · Ocean view' },
+    { name: '3-bedroom villa · Type 2', area: 121, quantity:1, bedrooms: 3, floors: 2, bathrooms: 3, guestWC:true, pool: '11.7 m² private pool', extras: 'Kitchen-living room · Guest WC · Terrace with relaxation area · Ocean view' }
   ]
 };
 // Homepage unit cards follow the updated Solvyn City project naming.
@@ -123,8 +123,8 @@ function showResidence(project, index) {
 }
 const details = {
   solvyn: { title: 'Solvyn City.', label: 'OUR FLAGSHIP / BUKIT, BALI', image: 'assets/project.webp', body: 'A premium villa and apartment development with a planned surf wave, a wellness cluster focused on biohacking and preventive health, and an event space for weddings and gatherings.', rows: ['Published location guide · 2 minutes from the ocean', 'Published location guide · 20 minutes from Ngurah Rai Airport', 'Travel times are indicative and vary with route and traffic.'], note: 'Specifications are from the company website. Confirm current availability, pricing and final plans with the team. The image is a concept illustration, not an approved project rendering.' },
-  pandawa: { title: 'Pandawa Residence.', label: 'RESIDENCES / BUKIT, BALI', image: 'assets/hero.webp', body: 'Apartments and two- to three-bedroom villas in Bukit, with published layouts from 40 to 234 m². Visit the project in person with the Sansara Development team.', rows: ['Apartments · Balcony, shared pool and parking', 'Villas · BBQ area and 15 m² private pools', 'Personal tours · Available by arrangement'], note: 'Specifications are from the company website. Confirm current availability, pricing and final plans with the team. The image is a concept illustration, not an approved project rendering.' },
-  progress: { title: 'See Pandawa in person.', label: 'PERSONAL PROJECT TOUR / BALI', body: 'The team invites visitors in Bali to a personal tour of Pandawa Residence. Arrange a time to see the project and ask about its latest construction progress.', rows: ['Project · Pandawa Residence', 'Contact · WhatsApp +62 822 3537 2572', 'Please share your preferred date and time.'], note: 'The source website does not publish dated milestones or a completion percentage. Ask the team for the latest progress report.' },
+  pandawa: { title: 'Solvyn City Phase 1.', label: 'RESIDENCES / BUKIT, BALI', image: 'assets/hero.webp', body: 'Apartments and two- to three-bedroom villas in Bukit, with published layouts from 40 to 234 m². Visit the project in person with the Sansara Development team.', rows: ['Apartments · Balcony, shared pool and parking', 'Villas · BBQ area and 15 m² private pools', 'Personal tours · Available by arrangement'], note: 'Specifications are from the company website. Confirm current availability, pricing and final plans with the team. The image is a concept illustration, not an approved project rendering.' },
+  progress: { title: 'See Solvyn City Phase 1 in person.', label: 'PERSONAL PROJECT TOUR / BALI', body: 'The team invites visitors in Bali to a personal tour of Solvyn City Phase 1. Arrange a time to see the project and ask about its latest construction progress.', rows: ['Project · Solvyn City Phase 1', 'Contact · WhatsApp +62 822 3537 2572', 'Please share your preferred date and time.'], note: 'The source website does not publish dated milestones or a completion percentage. Ask the team for the latest progress report.' },
   privacy: { title: 'Your privacy.', label: 'WEBSITE PREVIEW', body: 'Preparing an enquiry happens locally in your browser. No form entries are submitted automatically. You can download a copy or choose to continue to WhatsApp.', rows: ['Opening the WhatsApp draft shares its contents with WhatsApp; you decide whether to send it to the team.', 'No analytics or marketing cookies are implemented. Google Fonts, Tailwind CDN, the map-library CDN and OpenStreetMap receive normal resource requests.', 'External social and messaging services apply their own privacy policies.'], note: 'Form entries are not saved by this prototype after the page session. A final legal privacy policy is still needed before launch.' }
 };
 details['solvyn-apartment'] = { ...details.pandawa, title: 'Apartment', label: 'SOLVYN CITY / RESIDENCES', image: 'assets/interior.webp', body: 'A one-bedroom apartment at Solvyn City, with space for everyday living.', rows: [] };
@@ -160,11 +160,11 @@ document.querySelectorAll('[data-detail]').forEach(button => button.addEventList
     interest.querySelector('[data-residence]')?.remove();
     if (residences[project]) {
       const residence = residences[project][Number(document.querySelector('#residence-type').value)];
-      const option = new Option(`${project === 'pandawa' ? 'Pandawa Residence' : 'Solvyn City'} — ${residence.name} (${residence.area} m²)`);
+      const option = new Option(`${project === 'solvyn' ? 'Solvyn City Phase 2' : 'Solvyn City Phase 1'} — ${residence.name} (${residence.area} m²)`);
       option.dataset.residence = 'true';
       interest.add(option);
       interest.value = option.value;
-    } else interest.value = 'Pandawa Residence tour';
+    } else interest.value = 'Solvyn City Phase 1 tour';
     openConsult();
   });
   detailDialog.showModal();
@@ -455,9 +455,13 @@ if (baliMapElement) {
   const origin = [-8.8448125, 115.1753125];
   const destinations = [
     {name:'Pandawa Beach',kind:'Ocean & coast',point:[-8.8453,115.1864]},
+    {name:'Melasti Beach',kind:'Ocean & coast',point:[-8.8482935,115.1631697],mapsUrl:'https://maps.app.goo.gl/9gdF7s6V9hFVWqTi9'},
     {name:'GWK Cultural Park',kind:'Culture',point:[-8.81039,115.16462]},
     {name:'Uluwatu Temple',kind:'Culture & sunset',point:[-8.82939,115.08441]},
-    {name:'Ngurah Rai Airport',kind:'International connections',point:[-8.7475,115.169167]}
+    {name:'Ngurah Rai Airport',kind:'International connections',point:[-8.7475,115.169167]},
+    {name:'Asian Intercultural School Bali',kind:'Education',point:[-8.800690638377342,115.14609869280723],mapsUrl:'https://maps.app.goo.gl/CxVK1GqEST3Uav5N9'},
+    {name:'Nusa Medica Clinic Pecatu',kind:'Healthcare',point:[-8.8301691,115.1252524],mapsUrl:'https://maps.app.goo.gl/pXxoXecSuK33SHYg6'},
+    {name:'Bali Collection',kind:'Shopping & dining',point:[-8.80137,115.23204],mapsUrl:'https://maps.app.goo.gl/rwHysEJNVHM7946Y7'}
   ];
   const distanceKm = point => {
     const rad = value => value * Math.PI / 180;
@@ -468,7 +472,7 @@ if (baliMapElement) {
   let map, selectedLine;
   const markers = [];
   const buttons = [];
-  const directions = item => 'https://www.google.com/maps/dir/?api=1&origin='+origin.join(',')+'&destination='+encodeURIComponent(item.name+', Bali')+'&travelmode=driving';
+  const directions = item => 'https://www.google.com/maps/dir/?api=1&origin='+origin.join(',')+'&destination='+encodeURIComponent(item.point.join(','))+'&travelmode=driving';
   destinations.forEach((item,index) => {
     const button = document.createElement('button');
     button.type = 'button'; button.className = 'location-choice';button.setAttribute('aria-pressed','false');
@@ -483,14 +487,32 @@ if (baliMapElement) {
     });
     list.append(button); buttons.push(button);
   });
+  const locationScrollHint = document.querySelector('.location-scroll-hint');
+  if (locationScrollHint) {
+    const updateLocationScrollHint = () => {
+      locationScrollHint.disabled = list.scrollTop + list.clientHeight >= list.scrollHeight - 2;
+    };
+    list.addEventListener('scroll', updateLocationScrollHint, {passive:true});
+    locationScrollHint.addEventListener('click', () => list.scrollBy({top:list.clientHeight, behavior:reducedMotion.matches ? 'instant' : 'smooth'}));
+    updateLocationScrollHint();
+  }
   if (window.L) {
     baliMapElement.replaceChildren();
     map = L.map(baliMapElement,{scrollWheelZoom:true});
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-    const icon = (text,project=false) => L.divIcon({className:'map-pin'+(project?' map-pin-project':''),html:text,iconSize:[32,32],iconAnchor:[16,16]});
-    L.marker(origin,{icon:icon('S',true),title:'Solvyn City'}).addTo(map).bindPopup('<strong>Solvyn City</strong><br>Jl. Karang Pandawa, Kutuh');
+    const destinationSymbols = {
+      'Ocean & coast':'<path d="M3 17c2-2 4 2 6 0s4 2 6 0 4 2 6 0M3 21c2-2 4 2 6 0s4 2 6 0 4 2 6 0M5 13a7 7 0 0 1 14 0H5Zm7-7v10"/>',
+      'Culture':'<path d="m3 9 9-6 9 6H3Zm2 3v7m5-7v7m4-7v7m5-7v7M3 21h18"/>',
+      'Culture & sunset':'<path d="M4 21h16M6 21V11h12v10M4 11l8-4 8 4M8 7l4-4 4 4M10 21v-5h4v5"/>',
+      'International connections':'<path d="m22 2-7 20-4-9-9-4 20-7ZM11 13 22 2"/>',
+      'Education':'<path d="m2 9 10-5 10 5-10 5L2 9Zm4 2v6c4 3 8 3 12 0v-6M22 9v7"/>',
+      'Healthcare':'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6m-3-3v6m-3 10v-5h6v5"/>',
+      'Shopping & dining':'<path d="M4 9h16l-1 12H5L4 9Zm4 0V7a4 4 0 0 1 8 0v2"/>'
+    };
+    const icon = item => L.divIcon({className:'map-pin',html:`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${destinationSymbols[item.kind]}</svg>`,iconSize:[32,32],iconAnchor:[16,16]});
+    L.marker(origin,{icon:L.divIcon({className:'map-pin-solvyn-logo',html:'<img src=\"assets/Logo/solvyn-city-map-icon.png\" alt=\"Solvyn City\">',iconSize:[42,42],iconAnchor:[21,42],popupAnchor:[0,-42]}),title:'Solvyn City'}).addTo(map).bindPopup('<strong>Solvyn City</strong><br>Jl. Karang Pandawa, Kutuh');
     destinations.forEach((item,index) => {
-      const marker = L.marker(item.point,{icon:icon(String(index+1)),title:item.name}).addTo(map).bindPopup(`<strong>${item.name}</strong><br>${distanceKm(item.point)} km straight-line from Solvyn City<br><a href="${directions(item)}" target="_blank" rel="noopener noreferrer">Driving directions ↗</a>`);
+      const marker = L.marker(item.point,{icon:icon(item),title:item.name}).addTo(map).bindPopup(`<strong>${item.name}</strong><br>${distanceKm(item.point)} km straight-line from Solvyn City<br><a href="${directions(item)}" target="_blank" rel="noopener noreferrer">Driving directions ↗</a>${item.mapsUrl ? `<br><a href="${item.mapsUrl}" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>` : ''}`);
       marker.on('click',()=>buttons[index].click());markers.push(marker);
     });
     const reset = () => {

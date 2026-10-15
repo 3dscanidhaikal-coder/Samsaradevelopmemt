@@ -1,0 +1,12 @@
+const fs=require('fs');
+const description='A 121 m² three-bedroom villa at Solvyn City Phase 2, arranged over two floors. The layout includes a kitchen-living room, three bathrooms plus a guest WC, and a terrace with a relaxation area. An 11.7 m² private pool and an ocean view complete the residence. This residence type comprises 1 villa.';
+let html=fs.readFileSync('assets/residence-solvyn-4.html','utf8');
+for(const[k,v]of Object.entries({Bedrooms:'3',Bathrooms:'3 + guest WC',Floors:'2',Pool:'11.7 m² private pool'}))html=html.replace(new RegExp(`(<dt>${k}</dt><dd>).*?(</dd>)`),'$1'+v+'$2');
+html=html.replace(/<p class="villa-intro">[\s\S]*?<\/p>/,`<p class="villa-intro">${description}</p>`).replaceAll('14.4 m²','11.7 m²');
+fs.writeFileSync('assets/residence-solvyn-4.html',html);
+const files=fs.readdirSync('.').filter(f=>f.endsWith('.html')).concat(fs.readdirSync('assets').filter(f=>/^residence-.*\.html$/.test(f)).map(f=>'assets/'+f));
+for(const file of files){let text=fs.readFileSync(file,'utf8');text=text.replace(/<article class="residence-list-card[^"]*">[\s\S]*?<\/article>/g,card=>card.includes('href="assets/residence-solvyn-4.html"')?card.replace(/(<h3>.*?<\/h3>)<p>.*?<\/p>(?:<p class="muted">.*?<\/p>)?/,'$1<p>121 m² · 3 bedrooms</p><p class="muted">11.7 m² private pool · 1 villa</p>'):card);fs.writeFileSync(file,text);}
+let js=fs.readFileSync('script.js','utf8');js=js.replace("{ name: '3-bedroom villa · Type 2', area: 121, bedrooms: 3, floors: 2, bathrooms: 3, pool: '14.4 m² private pool', extras: 'Kitchen-living room · Terrace with seating · Ocean view' }","{ name: '3-bedroom villa · Type 2', area: 121, quantity:1, bedrooms: 3, floors: 2, bathrooms: 3, guestWC:true, pool: '11.7 m² private pool', extras: 'Kitchen-living room · Guest WC · Terrace with relaxation area · Ocean view' }");fs.writeFileSync('script.js',js);
+const translations=[['11.7 m² private pool · 1 villa','Частный бассейн 11,7 м² · 1 вилла'],[description,'Вилла площадью 121 м² с 3 спальнями в Solvyn City Phase 2, расположенная на 2 этажах. Кухня-гостиная, 3 ванные комнаты и гостевой санузел, терраса с зоной отдыха, частный бассейн площадью 11,7 м² и вид на океан. Количество вилл этого типа — 1.']];
+let lang=fs.readFileSync('assets/language.js','utf8');lang=lang.replace('const russianText = Object.fromEntries(`','const russianText = Object.fromEntries(`\n'+translations.filter(([en])=>!lang.includes(en+'|')).map(t=>t.join('|')).join('\n'));fs.writeFileSync('assets/language.js',lang);
+console.log('Three-bedroom villa type 2 specifications updated.');

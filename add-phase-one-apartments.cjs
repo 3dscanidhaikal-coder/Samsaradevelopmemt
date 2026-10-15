@@ -1,0 +1,16 @@
+const fs=require('fs');
+const photo='assets/Sansara Pictures/Landing Page/Selected Residences/Apartment.jpg';
+const source=fs.readFileSync('assets/residence-pandawa-0.html','utf8');
+let apartment50=source.replaceAll('40 m²','50 m²').replaceAll('Solvyn City Phase 1','Solvyn City Phase 1');
+apartment50=apartment50.replace(/<title>.*?<\/title>/,'<title>50 m² apartment · Solvyn City Phase 1</title>').replace(/<h1>.*?<\/h1>/,'<h1>Apartment · 50 m².</h1>');
+apartment50=apartment50.replace(/(<dt>(?:Bedrooms|Bathrooms|Floors|Pool)<\/dt><dd>).*?(<\/dd>)/g,'$1Ask the team$2');
+apartment50=apartment50.replace(/<p class="villa-intro">[\s\S]*?<\/p>/,'<p class="villa-intro">A 50 m² apartment at Solvyn City Phase 1 in Bukit, Bali. Request the floor plan, final specifications and current availability from our team.</p>');
+apartment50=apartment50.replaceAll('data-interest="Solvyn City Phase 1 — Apartments"','data-interest="Solvyn City Phase 1 — Apartment 50 m²"').replace('<option>Solvyn City Phase 1 — Apartments</option>','<option>Solvyn City Phase 1 — Apartment 50 m²</option>');
+fs.writeFileSync('assets/residence-apartment-50.html',apartment50);
+const cards=[{name:'Apartment · 40 m²',area:40,page:'residence-pandawa-0.html'},{name:'Apartment · 50 m²',area:50,page:'residence-apartment-50.html'}].map(r=>`<article class="residence-list-card reveal"><a class="residence-list-image" href="assets/${r.page}" aria-label="Explore ${r.area} m² apartment"><img src="${photo}" alt="Illustrative apartment rendering" loading="lazy"><span class="image-circle" aria-hidden="true">↗</span></a><div class="residence-list-copy"><span class="eyebrow">Solvyn City Phase 1</span><h3>${r.name}</h3><p>${r.area} m²</p><a class="text-link" href="assets/${r.page}">Explore more <span aria-hidden="true">↗</span></a></div></article>`).join('');
+let phase=fs.readFileSync('solvyn-phase-1.html','utf8');
+phase=phase.replace('Three villa layouts in Bukit, Bali, with residences ranging from 101 to 234 m².','Villas and apartments in Bukit, Bali, with residences ranging from 40 to 234 m².').replace('3 residence types','5 residence types').replace('101 / 129 / 234 m²','40 / 50 / 101 / 129 / 234 m²').replace('<dt>Villa layouts</dt>','<dt>Residence sizes</dt>');
+phase=phase.replace('</div></section><section class="contact-section"',cards+'</div></section><section class="contact-section"');
+fs.writeFileSync('solvyn-phase-1.html',phase);
+if((phase.match(/<article class="residence-list-card reveal">/g)||[]).length!==5)throw Error('Expected five cards');
+console.log('Phase 1 now has five cards, including 40 m² and 50 m² apartments.');

@@ -1,10 +1,69 @@
 'use strict';
 // English source text is retained so switching language never replaces controls.
 const russianText = Object.fromEntries(`
+03 / PROJECTS HIGHLIGHT|03 / ИЗБРАННЫЕ ПРОЕКТЫ
+Two phases.|Два этапа.
+One shared vision.|Единое видение.
+Explore Solvyn City’s villas, apartments, and penthouses.|Откройте для себя виллы, апартаменты и пентхаусы Solvyn City.
+Find your place in contemporary island living.|Найдите своё место в современной островной жизни.
+Villas and apartments in Bukit, Bali.|Виллы и апартаменты на Буките, Бали.
+Villas, studio apartments, and penthouses in Bukit, Bali.|Виллы, апартаменты-студии и пентхаусы на Буките, Бали.
+
+Leasehold terms|Условия аренды
+23+ years, with a guaranteed extension.|23+ года с гарантированным продлением.
+80 years.|80 лет.
+Leasehold terms depend on the project phase. Phase 1 offers 23+ years, with a guaranteed extension. Phase 2 offers 80 years. This grants owners a long-term right to use the property and supports long-term ownership planning.|Условия leasehold зависят от этапа проекта. Phase 1: 23+ года с гарантированным продлением. Phase 2: 80 лет. Это предоставляет владельцам долгосрочное право пользования недвижимостью и возможность долгосрочного планирования.
+Innovative water purification system|Инновационная система очистки воды
+Innovative water purification system: show details|Инновационная система очистки воды: подробнее
+An innovative water purification system designed to support water quality throughout the development. Ask our team for the system specifications and maintenance details.|Инновационная система очистки воды для поддержания качества воды на территории комплекса. Уточните у нашей команды характеристики системы и условия обслуживания.
+ 
+Melasti Beach|Пляж Меласти
+Two-bedroom penthouse|Пентхаус с двумя спальнями
+2 balconies · 3 penthouses|2 балкона · 3 пентхауса
+109 m² · 2 bedrooms · 2 balconies|109 м² · 2 спальни · 2 балкона
+A 109 m² two-bedroom penthouse at Solvyn City Phase 2, featuring a kitchen-living room, two bathrooms plus a guest WC and two balconies. This residence type comprises 3 penthouses.|Пентхаус площадью 109 м² с двумя спальнями в Solvyn City Phase 2: кухня-гостиная, 2 ванные комнаты и гостевой санузел, 2 балкона. Количество пентхаусов этого типа — 3.
+Studio apartments|СТУДИЯ апартаменты
+Studio|Студия
+34.6 m² · Studio|34,6 м² · Студия
+34.6 m² · Studio · Balcony|34,6 м² · Студия · Балкон
+Balcony · 78 apartments|Балкон · 78 апартаментов
+Studio apartments at Solvyn City Phase 2 offer 34.6 m², with a spacious bedroom and seating area, one bathroom and a balcony. This residence type comprises 78 apartments.|Апартаменты-студии площадью 34,6 м² в Solvyn City Phase 2: просторная спальня с зоной отдыха, ванная комната и балкон. Количество апартаментов этого типа — 78.
+11.7 m² private pool · 1 villa|Частный бассейн 11,7 м² · 1 вилла
+A 121 m² three-bedroom villa at Solvyn City Phase 2, arranged over two floors. The layout includes a kitchen-living room, three bathrooms plus a guest WC, and a terrace with a relaxation area. An 11.7 m² private pool and an ocean view complete the residence. This residence type comprises 1 villa.|Вилла площадью 121 м² с 3 спальнями в Solvyn City Phase 2, расположенная на 2 этажах. Кухня-гостиная, 3 ванные комнаты и гостевой санузел, терраса с зоной отдыха, частный бассейн площадью 11,7 м² и вид на океан. Количество вилл этого типа — 1.
+3 + guest WC|3 + гостевой санузел
+12 m² lower + 12.2 m² upper|12 м² на нижнем уровне + 12,2 м² на верхнем
+Two private pools · 7 villas|Два частных бассейна · 7 вилл
+167 m² · 3 bedrooms · Two private pools|167 м² · 3 спальни · Два частных бассейна
+A 167 m² three-bedroom villa at Solvyn City Phase 2, arranged over three floors. The layout includes a kitchen-living room, three bathrooms plus a guest WC, a balcony and a terrace with a relaxation area. Two private pools provide 12 m² on the lower level and 12.2 m² on the upper level, with an ocean view. This residence type comprises 7 villas.|Вилла площадью 167 м² с 3 спальнями в Solvyn City Phase 2, расположенная на 3 этажах. Кухня-гостиная, 3 ванные комнаты и гостевой санузел, балкон, терраса с зоной отдыха, бассейн на нижнем уровне площадью 12 м², бассейн на верхнем уровне площадью 12,2 м² и вид на океан. Количество вилл этого типа — 7.
+12.4 m² · upper level|12,4 м² · верхний уровень
+12.4 m² private pool · 31 villas|Частный бассейн 12,4 м² · 31 вилла
+A 109 m² two-bedroom villa at Solvyn City Phase 2, arranged over two floors. The layout includes a kitchen-living room, two bathrooms plus a guest WC, and a terrace with a relaxation area. A 12.4 m² private pool sits on the upper level, with an ocean view. This residence type comprises 31 villas.|Вилла площадью 109 м² с 2 спальнями в Solvyn City Phase 2, расположенная на 2 этажах. Кухня-гостиная, 2 ванные комнаты и гостевой санузел, терраса с зоной отдыха, бассейн на верхнем уровне площадью 12,4 м² и вид на океан. Количество вилл этого типа — 31.
+One-bedroom villa|Вилла с одной спальней
+47.7 m² · 1 bedroom|47,7 м² · 1 спальня
+7.5 m² private pool · 14 villas|Частный бассейн 7,5 м² · 14 вилл
+A 47.7 m² one-bedroom villa at Solvyn City Phase 2, with a spacious bedroom, one bathroom and a kitchen-living room. A terrace with a relaxation area, a 7.5 m² private pool and an ocean view complete the layout. This residence type comprises 14 villas.|Вилла площадью 47,7 м² с одной спальней в Solvyn City Phase 2. Просторная спальня, ванная комната, кухня-гостиная, терраса с зоной отдыха, частный бассейн площадью 7,5 м² и вид на океан. Количество вилл этого типа — 14.
+2-bedroom villa · Type 1|Вилла с 2 спальнями · Тип 1
+11.7 m² private pool · 11 villas|Частный бассейн 11,7 м² · 11 вилл
+2 + guest WC|2 + гостевой санузел
+11.7 m² · lower level|11,7 м² · нижний уровень
+A 104 m² two-bedroom villa at Solvyn City Phase 2, arranged over two floors. The layout includes two bathrooms plus a guest WC, a kitchen-living room and a terrace with a relaxation area. An 11.7 m² private pool sits on the lower level, with an ocean view. This residence type comprises 11 villas.|Вилла площадью 104 м² с 2 спальнями в Solvyn City Phase 2, расположенная на 2 этажах. Включает 2 ванные комнаты и гостевой санузел, кухню-гостиную, террасу с зоной отдыха, бассейн на нижнем уровне площадью 11,7 м² и вид на океан. Количество вилл этого типа — 11.
+Villa type 1 at Solvyn City Phase 1 offers 101 m², 2 bedrooms, 3 bathrooms and 2 floors. The layout includes a kitchen-living room, BBQ area, ocean view and a 15 m² private pool. This residence type comprises 36 villas.|Villa type 1 в Solvyn City Phase 1: 101 м², 2 спальни, 3 ванные комнаты и 2 этажа. Кухня-гостиная, зона BBQ, вид на океан и частный бассейн площадью 15 м². Количество вилл этого типа — 36.
+15 m² private pool · 36 villas|Частный бассейн 15 м² · 36 вилл
+Villa type 2 at Solvyn City Phase 1 offers 129 m², 3 bedrooms, 4 bathrooms and 2 floors. The layout includes a kitchen-living room, BBQ area, ocean view and a 15 m² private pool. This residence type comprises 20 villas.|Villa type 2 в Solvyn City Phase 1: 129 м², 3 спальни, 4 ванные комнаты и 2 этажа. Кухня-гостиная, зона BBQ, вид на океан и частный бассейн площадью 15 м². Количество вилл этого типа — 20.
+Villa type 3 at Solvyn City Phase 1 offers 234 m² including rooftop, 3 bedrooms, 4 bathrooms and 3 floors. The layout includes a kitchen-living room, BBQ area, ocean view and a 18 m² private pool. This residence type comprises 8 villas.|Villa type 3 в Solvyn City Phase 1: 234 м² с руфтопом, 3 спальни, 4 ванные комнаты и 3 этажа. Кухня-гостиная, зона BBQ, вид на океан и частный бассейн площадью 18 м². Количество вилл этого типа — 8.
+15 m² private pool · 20 villas|Частный бассейн 15 м² · 20 вилл
+18 m² private pool · 8 villas|Частный бассейн 18 м² · 8 вилл
+234 m² including rooftop · 3 bedrooms|234 м² с руфтопом · 3 спальни
+18 m² private pool|Частный бассейн 18 м²
+Communal pool · Balcony · Parking · Ocean view|Общий бассейн · Балкон · Парковка · Вид на океан
+A 40 m² apartment at Solvyn City Phase 1 with one bedroom, one bathroom and a balcony. The residence includes parking, access to a shared pool and an ocean view.|Апартаменты площадью 40 м² в Solvyn City Phase 1: 1 спальня, 1 ванная комната и балкон. Включены парковка, доступ к общему бассейну и вид на океан.
+A 50 m² apartment at Solvyn City Phase 1 with one bedroom, one bathroom and a balcony. The residence includes parking, access to a shared pool and an ocean view.|Апартаменты площадью 50 м² в Solvyn City Phase 1: 1 спальня, 1 ванная комната и балкон. Включены парковка, доступ к общему бассейну и вид на океан.
+40 m² · 1 bedroom · Communal pool|40 м² · 1 спальня · Общий бассейн
+50 m² · 1 bedroom · Communal pool|50 м² · 1 спальня · Общий бассейн
 Space to unwind.|Пространство для отдыха.
 Room to feel at home.|Место, где вы дома.
 Explore thoughtfully arranged apartments with space for the everyday moments that matter.|Откройте для себя продуманные апартаменты, где есть место для важных повседневных моментов.
-Pandawa Residence.|Pandawa Residence.
+Solvyn City Phase 1.|Solvyn City Phase 1.
 A more private retreat.|Ваше личное уединение.
 Discover private villas and apartments, with room to relax and settle into life in Bali.|Откройте для себя частные виллы и апартаменты для отдыха и неспешной жизни на Бали.
 Solvyn City.|Solvyn City.
@@ -62,7 +121,7 @@ All projects ↗|Все проекты ↗
 5 residence types|5 типов резиденций
 Apartment + penthouse|Апартаменты + пентхаус
 Apartments & penthouses|Апартаменты и пентхаусы
-March 2026|Март 2026
+March 2027|Март 2027
 Villa 104|Вилла 104
 Villa 109|Вилла 109
 Villa 121|Вилла 121
@@ -177,7 +236,7 @@ BUKIT, BALI|БУКИТ, БАЛИ
 40–234 m² · 1–3 bedrooms · Apartments & villas|40–234 м² · 1–3 спальни · Апартаменты и виллы
 34.6–165 m² · 1–3 bedrooms · Apartments & villas|34,6–165 м² · 1–3 спальни · Апартаменты и виллы
 PROJECT DATE|ДАТА ПРОЕКТА
-June 2027|Июнь 2027
+June 2028|Июнь 2028
 March 2028|Март 2028
 Explore residence|Подробнее о резиденции
 SOLVYN CITY / KUTUH, BALI|SOLVYN CITY / КУТУХ, БАЛИ
@@ -221,8 +280,8 @@ Flip it|Переверните
 CLARITY AT EVERY STAGE|ЯСНОСТЬ НА КАЖДОМ ЭТАПЕ
 From concept|От замысла
  to reality.|к воплощению.
-Already in Bali? Arrange a personal tour of Pandawa Residence to see the project and discuss the latest construction updates with the team.|Уже на Бали? Запишитесь на личную экскурсию в Pandawa Residence, чтобы увидеть проект и обсудить ход строительства с командой.
-Arrange a Pandawa tour|Посетить Pandawa Residence
+Already in Bali? Arrange a personal tour of Solvyn City Phase 1 to see the project and discuss the latest construction updates with the team.|Уже на Бали? Запишитесь на личную экскурсию в Solvyn City Phase 1, чтобы увидеть проект и обсудить ход строительства с командой.
+Arrange a Phase 1 tour|Посетить Solvyn City Phase 1
 Planning|Планирование
 Plans, proportions and materials.|Планы, пропорции и материалы.
 Foundation|Фундамент
@@ -275,7 +334,7 @@ Email address|Электронная почта
 I’m interested in|Меня интересует
 Request the catalogue|Запрос каталога
 Solvyn City presentation|Презентация Solvyn City
-Pandawa Residence tour|Экскурсия в Pandawa Residence
+Solvyn City Phase 1 tour|Экскурсия в Solvyn City Phase 1
 A general conversation|Общие вопросы
 Anything else?|Хотите что-то добавить?
 (optional)|(необязательно)

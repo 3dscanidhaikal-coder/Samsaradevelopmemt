@@ -4,7 +4,7 @@ const source = fs.readFileSync('script.js','utf8');
 const data = vm.runInNewContext('(' + source.match(/const residences = (\{[\s\S]*?\n\});/)[1] + ')');
 const template = fs.readFileSync('residences.html','utf8');
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
-const entries = Object.entries(data).flatMap(([project,rows])=>rows.map((r,index)=>({...r,project,index,slug:`${project}-${index}`,label:project==='solvyn'?'Solvyn City':'Pandawa Residence'})));
+const entries = Object.entries(data).flatMap(([project,rows])=>rows.map((r,index)=>({...r,project,index,slug:`${project}-${index}`,label:project==='solvyn'?'Solvyn City Phase 2':'Solvyn City Phase 1'})));
 for (const [i,r] of entries.entries()) {
  const next = entries[(i+1)%entries.length];
  const image = r.index===0?'assets/interior.webp':r.index%2?'assets/hero.webp':'assets/project.webp';
@@ -26,3 +26,5 @@ require('./refine-residence-pages.cjs');
 require('./update-residence-recommendations.cjs');
 
 require('./apply-sansara-pictures.cjs');
+
+require('./normalize-project-names.cjs');

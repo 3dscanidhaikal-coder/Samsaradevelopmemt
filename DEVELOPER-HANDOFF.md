@@ -1,36 +1,40 @@
-# Developer handoff
+# Sansara website developer handoff
 
-This is a static HTML/CSS/vanilla JavaScript website. No install or build step is required.
+Snapshot: 15 October 2026 (Asia/Makassar).
 
-## Run locally
-Install Node.js, then run `node server.cjs` from this folder. Open http://localhost:4173.
-The server binds to 127.0.0.1. Stop it with Ctrl+C.
-Internet access is needed for Google Fonts, Tailwind CDN, map resources, and the temporary Unsplash team portraits.
+## Run
+Static HTML, CSS and vanilla JavaScript; no package install or build is required.
+Run `node server.cjs` and open http://localhost:4173. Stop with Ctrl+C.
+For static hosting, deploy all HTML, CSS, JavaScript and assets together while preserving paths.
+External services: Google Fonts, Tailwind CDN, Leaflet CDN and OpenStreetMap tiles.
 
-## Main files
-- index.html: homepage
-- about.html: company and temporary team portraits
-- projects.html: project carousel and phase links
-- residences.html: residence directory and category filters
-- solvyn-phase-1.html / solvyn-phase-2.html: phase pages
-- assets/residence-solvyn-*.html / assets/residence-pandawa-*.html: nine dedicated residence pages
-- styles.css: shared styling and responsive rules
-- script.js: shared navigation, enquiry dialogs, motion, and residence data
-- assets/residences.js, projects.js, language.js, flagship.js: page-specific behaviour
-- server.cjs: local preview server
+## Structure
+- index.html: homepage, project highlights, Bali map, amenities, FAQ and consultation CTA.
+- about.html: company, world map/statistics, experience and consultation CTA.
+- projects.html: Phase 1/Phase 2 carousel and project cards.
+- residences.html: residence category filters and shared residence links.
+- solvyn-phase-1.html / solvyn-phase-2.html: phase listings.
+- assets/residence-*.html: shared detail pages and redirects from earlier duplicate URLs.
+- script.js / styles.css: shared interactions and styles.
+- assets/language.js: English/Russian text switching.
+- assets/projects.js, residences.js, flagship.js: page interactions.
+- assets/Sansara Pictures/: supplied renders and galleries.
+- assets/global-presence-map.svg: static world map. Source boundaries: https://github.com/datasets/geo-countries (Natural Earth-derived boundary data).
+- assets/Logo/: Sansara logos and Solvyn City map marker.
 
-Residence pages live in assets and use <base href="../">, so links and resources resolve from the website root. Preserve this when moving them.
+Detail pages use <base href="../">; their asset URLs resolve from the website root.
+Some legacy filenames and internal data keys remain for compatibility. Public project names are Solvyn City Phase 1 and Phase 2.
 
-## Generated residence pages
-`node build-residence-pages.cjs` generates all nine residence pages from the residence data in script.js and the shared residences.html shell. It then runs refine-residence-pages.cjs and update-residence-recommendations.cjs.
-Edit the generators as well as any page template changes to prevent future regeneration overwriting edits.
+## Current content
+Phase 1: 2027, leasehold 23+ years with a guaranteed extension.
+Phase 2: 2028, leasehold 80 years.
+Gallery maximum: five available images per residence.
+Matching phase/directory cards share one detail page. Earlier duplicate URLs redirect.
+The enquiry form opens a modal, creates a local download and prepares a WhatsApp draft. It does not automatically send messages or submit to a CRM.
 
-## Content requiring review
-- Team portraits are temporary stock images; names and roles are placeholders.
-- Some gallery images are shared architectural concepts rather than unit-specific renders.
-- Phase 1 and Phase 2 have supplied render assets. The directory still includes older Solvyn/Pandawa records; reconcile names and unit specifications with the owner before launch.
-- Confirm construction start/completion dates, availability, prices, and final floor plans. They are not established by the current prototype.
-- The enquiry form prepares a local download and a WhatsApp draft; it does not send automatically or connect to a CRM.
-- Review final privacy/legal copy, translations, and external contact links before publication.
+## Editing
+The checked-in HTML is the authoritative current snapshot. The .cjs content scripts record iterative generation and migration steps; several are one-off transformations, not an idempotent build pipeline. Do not run them all or regenerate pages blindly. Update shared pages, corresponding cards, script.js data and language.js together, then verify links and content.
+The four largest project images are web-sized copies in this package/GitHub; original source renders are retained separately in the local working folder.
 
-README.md, CONTENT-SOURCES.md, brand-spec.md and the asset notes provide additional context. archive/ contains earlier layouts, not the current site.
+## Before launch
+Confirm final dates, availability, pricing, legal/privacy copy and translations with the owner. Approved figures and property specifications in this snapshot came from the owner's supplied references. Some image sets remain shared illustrations.

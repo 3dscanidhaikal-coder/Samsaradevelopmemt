@@ -1,0 +1,20 @@
+const fs=require('fs');
+const units=[{slug:'pandawa-1',name:'Villa type 1',area:'101 m²',quantity:36,bedrooms:2,floors:2,bathrooms:3,pool:15},{slug:'pandawa-2',name:'Villa type 2',area:'129 m²',quantity:20,bedrooms:3,floors:2,bathrooms:4,pool:15},{slug:'pandawa-3',name:'Villa type 3',area:'234 m² including rooftop',quantity:8,bedrooms:3,floors:3,bathrooms:4,pool:18}];
+const translations=[];
+for(const r of units){
+ const file=`assets/residence-${r.slug}.html`;
+ let html=fs.readFileSync(file,'utf8');
+ const facts={Bedrooms:r.bedrooms,Bathrooms:r.bathrooms,Floors:r.floors,Pool:`${r.pool} m² private pool`,'Floor area':r.area};
+ for(const[k,v]of Object.entries(facts))html=html.replace(new RegExp(`(<dt>${k}</dt><dd>).*?(</dd>)`),'$1'+v+'$2');
+ const description=`${r.name} at Solvyn City Phase 1 offers ${r.area}, ${r.bedrooms} bedrooms, ${r.bathrooms} bathrooms and ${r.floors} floors. The layout includes a kitchen-living room, BBQ area, ocean view and a ${r.pool} m² private pool. This residence type comprises ${r.quantity} villas.`;
+ html=html.replace(/<p class="villa-intro">[\s\S]*?<\/p>/,`<p class="villa-intro">${description}</p>`);
+ html=html.replace(/(<div class="wrap residences-banner-copy">[\s\S]*?<h1>.*?<\/h1><p>).*?(<\/p>)/,'$1'+`${r.area} · ${r.bedrooms} bedrooms · ${r.pool} m² private pool`+'$2');
+ fs.writeFileSync(file,html);
+ translations.push([description,`${r.name} в Solvyn City Phase 1: ${r.area.startsWith('234')?'234 м² с руфтопом':r.area.replace('m²','м²')}, ${r.bedrooms} спальни, ${r.bathrooms} ванные комнаты и ${r.floors} этажа. Кухня-гостиная, зона BBQ, вид на океан и частный бассейн площадью ${r.pool} м². Количество вилл этого типа — ${r.quantity}.`]);
+}
+const files=fs.readdirSync('.').filter(f=>f.endsWith('.html')).concat(fs.readdirSync('assets').filter(f=>/^residence-.*\.html$/.test(f)).map(f=>'assets/'+f));
+for(const file of files){let html=fs.readFileSync(file,'utf8');html=html.replace(/<article class="residence-list-card[^"]*">[\s\S]*?<\/article>/g,card=>{const r=units.find(r=>card.includes(`href="assets/residence-${r.slug}.html"`));if(!r)return card;return card.replace(/(<h3>.*?<\/h3>)<p>.*?<\/p>(?:<p class="muted">.*?<\/p>)?/,'$1'+`<p>${r.area} · ${r.bedrooms} bedrooms</p><p class="muted">${r.pool} m² private pool · ${r.quantity} villas</p>`);});fs.writeFileSync(file,html);}
+let js=fs.readFileSync('script.js','utf8');js=js.replace("{ name: 'Villa type 1', area: 101, bedrooms: 2","{ name: 'Villa type 1', area: 101, quantity:36, bedrooms: 2");js=js.replace("{ name: 'Villa type 2', area: 129, bedrooms: 3, floors: 2, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }","{ name: 'Villa type 2', area: 129, quantity:20, bedrooms: 3, floors: 2, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }");js=js.replace("{ name: 'Villa type 3', area: 234, bedrooms: 3, floors: 3, bathrooms: 4, pool: '15 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }","{ name: 'Villa type 3', area: 234, quantity:8, includesRooftop:true, bedrooms: 3, floors: 3, bathrooms: 4, pool: '18 m² private pool', extras: 'Kitchen-living room · BBQ · Ocean view' }");fs.writeFileSync('script.js',js);
+translations.push(['15 m² private pool · 36 villas','Частный бассейн 15 м² · 36 вилл'],['15 m² private pool · 20 villas','Частный бассейн 15 м² · 20 вилл'],['18 m² private pool · 8 villas','Частный бассейн 18 м² · 8 вилл'],['234 m² including rooftop · 3 bedrooms','234 м² с руфтопом · 3 спальни'],['18 m² private pool','Частный бассейн 18 м²']);
+let lang=fs.readFileSync('assets/language.js','utf8');const fresh=translations.filter(([en])=>!lang.includes(en+'|'));lang=lang.replace('const russianText = Object.fromEntries(`','const russianText = Object.fromEntries(`\n'+fresh.map(t=>t.join('|')).join('\n'));fs.writeFileSync('assets/language.js',lang);
+console.log('Villa types 2 and 3 updated across shared pages, cards, source data and translations.');

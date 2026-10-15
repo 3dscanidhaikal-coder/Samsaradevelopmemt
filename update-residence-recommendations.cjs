@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 const data=vm.runInNewContext('('+fs.readFileSync('script.js','utf8').match(/const residences = (\{[\s\S]*?\n\});/)[1]+')');
-const rows=Object.entries(data).flatMap(([project,items])=>items.map((r,index)=>({...r,slug:`${project}-${index}`,label:project==='solvyn'?'Solvyn City':'Pandawa Residence'})));
+const rows=Object.entries(data).flatMap(([project,items])=>items.map((r,index)=>({...r,slug:`${project}-${index}`,label:project==='solvyn'?'Solvyn City Phase 2':'Solvyn City Phase 1'})));
 for(const [index,r] of rows.entries()){
  const file=`assets/residence-${r.slug}.html`;
  let html=fs.readFileSync(file,'utf8');

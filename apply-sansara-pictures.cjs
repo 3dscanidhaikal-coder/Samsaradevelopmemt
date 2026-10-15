@@ -42,7 +42,7 @@ for(const file of files){
  if(detail&&units[detail[1]]){
  const imgs=units[detail[1]];
  html=blockImages(html,/<div class="residence-banner-slides"[\s\S]*?<\/div>/,[imgs[0]]);
- html=html.replace(/<div class="villa-gallery-grid">[\s\S]*?<\/div>/,`<div class="villa-gallery-grid">${imgs.map((src,i)=>`<a href="${src}" target="_blank" rel="noopener" aria-label="Open residence image ${i+1}"><img src="${src}" alt="Residence rendering ${i+1}" loading="lazy"></a>`).join('')}</div>`);
+ html=html.replace(/<div class="villa-gallery-grid">[\s\S]*?<\/div>/,`<div class="villa-gallery-grid">${imgs.slice(0,5).map((src,i)=>`<a href="${src}" target="_blank" rel="noopener" aria-label="Open residence image ${i+1}"><img src="${src}" alt="Residence rendering ${i+1}" loading="lazy"></a>`).join('')}</div>`);
  html=html.replace('Illustrative concept imagery, shared across residence types.','Residence imagery supplied by Sansara Development.');
  }
  html=html.replace(/<article class="residence-list-card">[\s\S]*?<\/article>/g,block=>{const k=block.match(/residence-((?:solvyn|pandawa)-\d)\.html/);return k&&units[k[1]]?blockImages(block,/[\s\S]*/,[units[k[1]][0]]):block;});

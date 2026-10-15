@@ -1,0 +1,5 @@
+const fs=require('fs'),path=require('path');
+const pages=fs.readdirSync('.').filter(f=>f.endsWith('.html')).concat(fs.readdirSync('assets').filter(f=>/^residence-.*\.html$/.test(f)).map(f=>'assets/'+f));
+let broken=[];
+for(const file of pages){const html=fs.readFileSync(file,'utf8');const base=html.includes('<base href="../">')?'.':path.dirname(file);for(const m of html.matchAll(/(?:src|href)="([^"]+)"/g)){const url=m[1];if(/^(?:https?:|#|mailto:|tel:|data:)/.test(url)||url==='../')continue;const target=path.resolve(base,decodeURIComponent(url.split(/[?#]/)[0]));if(!fs.existsSync(target))broken.push(file+': '+url);}if(/pandawa\s+residence/i.test(html))throw Error('Old project name: '+file);const gallery=html.match(/<div class="villa-gallery-grid">([\s\S]*?)<\/div>/);if(gallery&&[...gallery[1].matchAll(/<img\b/g)].length>5)throw Error('Gallery over five images: '+file);}
+if(broken.length){console.log(broken);process.exit(1);}console.log(`Verified ${pages.length} pages: local links/assets exist; gallery maximum is five; old project branding is absent.`);
