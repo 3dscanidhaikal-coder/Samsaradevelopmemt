@@ -1,6 +1,9 @@
 'use strict';
 // English source text is retained so switching language never replaces controls.
 const russianText = Object.fromEntries(`
+A valid passport is the only document required to begin the property purchase process.|Для начала процесса покупки недвижимости необходим только действующий паспорт.
+We guide clients through every stage of the transaction and assist with preparing and completing all necessary documentation.|Мы сопровождаем клиентов на каждом этапе сделки и помогаем подготовить и оформить всю необходимую документацию.
+
 03 / PROJECTS HIGHLIGHT|03 / ИЗБРАННЫЕ ПРОЕКТЫ
 Two phases.|Два этапа.
 One shared vision.|Единое видение.
